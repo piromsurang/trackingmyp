@@ -63,7 +63,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupButtonInSignupPage" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7g-g9-a5e">
                                 <rect key="frame" x="102" y="434" width="170" height="34"/>
@@ -71,7 +71,6 @@
                                 <state key="normal" title="SIGNUP"/>
                                 <connections>
                                     <action selector="signupAction:" destination="hdf-SB-HKB" eventType="touchUpInside" id="sgN-4K-hHJ"/>
-                                    <segue destination="Yt0-Bl-oOr" kind="show" identifier="signupToHome" id="nTv-WG-h1X"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnK-KC-6Fn">
@@ -79,7 +78,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,19 +88,27 @@
                         <outlet property="confirmedPassword" destination="K4r-DK-lyq" id="QLi-qE-3JC"/>
                         <outlet property="email" destination="zDH-nI-P6H" id="EG9-vh-WHQ"/>
                         <outlet property="password" destination="UnK-KC-6Fn" id="Nlp-Bn-BPg"/>
+                        <segue destination="2UR-1n-XSj" kind="show" identifier="signupToHome" id="ySo-7m-tFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJY-EI-Z9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2311.1999999999998" y="525.78710644677665"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="7pE-8i-5Uz">
+        <!--View Controller-->
+        <scene sceneID="96c-eY-f6o">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Yt0-Bl-oOr" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4ay-sQ-VeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="2UR-1n-XSj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="homePage" id="9k9-DK-WAi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FAR-4w-pPD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0k-DL-mHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3532" y="26.53673163418291"/>
+            <point key="canvasLocation" x="3417" y="52"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="zC0-fN-y6b">
