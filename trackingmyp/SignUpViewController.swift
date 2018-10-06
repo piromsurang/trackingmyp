@@ -7,16 +7,43 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmedPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func signupAction(_ sender: Any) {
+        if password.text != confirmedPassword.text {
+            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
+                if error == nil {
+                    self.performSegue(withIdentifier: "signupToHome", sender: self)
+                }
+                else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
 
+    }    
     /*
     // MARK: - Navigation
 

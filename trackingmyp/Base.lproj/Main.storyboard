@@ -20,7 +20,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="loginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKU-3m-NpE">
                                 <rect key="frame" x="102" y="391" width="170" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In"/>
+                                <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <segue destination="Bgt-Yn-WGO" kind="show" id="8GU-YZ-ohv"/>
                                 </connections>
@@ -28,9 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-jv-nA8">
                                 <rect key="frame" x="102" y="450" width="170" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="SIGNUP"/>
                                 <connections>
-                                    <segue destination="hdf-SB-HKB" kind="show" id="fgg-TY-7SB"/>
+                                    <segue destination="hdf-SB-HKB" kind="show" id="Csy-go-Gey"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,9 +50,46 @@
                     <view key="view" contentMode="scaleToFill" id="wi3-8H-8DX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupUsername" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zDH-nI-P6H">
+                                <rect key="frame" x="77" y="198" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupRetypedPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-DK-lyq">
+                                <rect key="frame" x="77" y="340" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupButtonInSignupPage" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7g-g9-a5e">
+                                <rect key="frame" x="102" y="434" width="170" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SIGNUP"/>
+                                <connections>
+                                    <action selector="signupAction:" destination="hdf-SB-HKB" eventType="touchUpInside" id="sgN-4K-hHJ"/>
+                                    <segue destination="Yt0-Bl-oOr" kind="show" identifier="signupToHome" id="nTv-WG-h1X"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signupPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnK-KC-6Fn">
+                                <rect key="frame" x="77" y="287" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="agj-L6-7UD"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmedPassword" destination="K4r-DK-lyq" id="QLi-qE-3JC"/>
+                        <outlet property="email" destination="zDH-nI-P6H" id="EG9-vh-WHQ"/>
+                        <outlet property="password" destination="UnK-KC-6Fn" id="Nlp-Bn-BPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJY-EI-Z9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
