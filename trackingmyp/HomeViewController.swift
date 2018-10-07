@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
 
@@ -15,11 +17,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var addStartDateButton: UIButton!
     @IBOutlet weak var addEndDateButton: UIButton!
-    
+    var ref: DatabaseReference!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.ref = Database.database().reference()
         let date = Date()
         let formatter = DateFormatter()
         formatter.timeStyle = .none
@@ -31,12 +35,22 @@ class HomeViewController: UIViewController {
         addStartDateButton.isHidden = true
         addEndDateButton.isHidden = false
         startDateLabel.text = currentDateLabel.text
+        
     }
     
     @IBAction func addEndDateAction(_ sender: Any) {
         addStartDateButton.isHidden = false
         addEndDateButton.isHidden = true
         endDateLabel.text = currentDateLabel.text
+        
+        let userID = Auth.auth().currentUser!.uid
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMM d, yyyy"
+//        let startDate = formatter.date(from: startDateLabel.text!)
+//        let endDate = formatter.date(from: endDateLabel.text!)
+//        let startDate = formatter.date(from: "October 1, 2018")
+//        let endDate = formatter.date(from: endDateLabel.text!)
+
     }
     
     /*
