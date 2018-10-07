@@ -10,13 +10,35 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var currentDateLabel: UILabel!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var addStartDateButton: UIButton!
+    @IBOutlet weak var addEndDateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .long
+        currentDateLabel.text = formatter.string(from: date)
     }
     
-
+    @IBAction func addStartDateAction(_ sender: Any) {
+        addStartDateButton.isHidden = true
+        addEndDateButton.isHidden = false
+        startDateLabel.text = currentDateLabel.text
+    }
+    
+    @IBAction func addEndDateAction(_ sender: Any) {
+        addStartDateButton.isHidden = false
+        addEndDateButton.isHidden = true
+        endDateLabel.text = currentDateLabel.text
+    }
+    
     /*
     // MARK: - Navigation
 
