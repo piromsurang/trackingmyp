@@ -10,32 +10,58 @@ import UIKit
 
 class Period {
     
-    var startDate: Date
-    var endDate: Date
-    var totalDays: Int
+//    var startDate: Date
+//    var endDate: Date
+//
+//    init() {
+//        self.startDate = Date()
+//        self.endDate = Date()
+//    }
+//
+//    func setStartDate(startDate: Date) {
+//        self.startDate = startDate
+//    }
+//
+//    func setEndDate(endDate: Date) {
+//        self.endDate = endDate
+//    }
+//
+//    func getStartDate() -> String {
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .none
+//        formatter.dateStyle = .long
+//        return formatter.string(from: startDate)
+//    }
+//
+//    func getEndDate() -> String {
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .none
+//        formatter.dateStyle = .long
+//        return formatter.string(from: endDate)
+//    }
     
-    init(startDate: Date, endDate: Date, totalDays: Int) {
-        self.startDate = startDate
-        self.endDate = endDate
-        self.totalDays = totalDays
+    private var startDate: String
+    private var endDate: String
+    
+    init() {
+        self.startDate = ""
+        self.endDate = ""
     }
     
-    func getTotalDays() -> Int {
-        return self.totalDays
+    func setStartDate(startDate: String) {
+        self.startDate = startDate
+    }
+    
+    func setEndDate(endDate: String) {
+        self.endDate = endDate
     }
     
     func getStartDate() -> String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .long
-        return formatter.string(from: startDate)
+        return startDate
     }
     
     func getEndDate() -> String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .long
-        return formatter.string(from: endDate)
+        return endDate
     }
     
 }
